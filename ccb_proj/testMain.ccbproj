@@ -29,7 +29,7 @@
 	<key>onlyPublishCCBs</key>
 	<false/>
 	<key>publishDirectory</key>
-	<string>../../../cocos2d-x-2.1.5/projects/testCCB/Resources</string>
+	<string>../Resources</string>
 	<key>publishDirectoryAndroid</key>
 	<string>Published-Android</string>
 	<key>publishDirectoryHTML5</key>

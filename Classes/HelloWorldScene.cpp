@@ -85,6 +85,8 @@ bool MainScene::Init()
     
     /* Read a ccbi file. */
     CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+    CCBAnimationManager* AnimationManager = ccbReader->getAnimationManager();
+    AnimationManager->runAnimationsForSequenceNamed("Default Timeline");
     
     ccbReader->release();
     
@@ -92,7 +94,10 @@ bool MainScene::Init()
         this->addChild(node);
         //        return node;
     }
-
+    
+    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
+    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
+    this->mBurstSprite->runAction(ccRepeatForever);
     
     return true;
 }
@@ -149,6 +154,7 @@ void MainScene::onMenuTestClicked(cocos2d::CCObject * pSender)
     CCLabelTTF* pLabel = dynamic_cast<CCLabelTTF*>(getChildByTag(1));
     CCLog("pLabel String %s",pLabel->getString());
     pLabel->setString("onMenuTestClicked");
+    mTestTitleLabelTTF->setString("战力123K");
 }
                         
 SEL_MenuHandler MainScene::onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName)
@@ -172,6 +178,8 @@ SEL_CCControlHandler MainScene::onResolveCCBCCControlSelector(CCObject * pTarget
 
 bool MainScene::onAssignCCBMemberVariable(CCObject * pTarget, const char * pMemberVariableName, CCNode * pNode) {
     CCLog("onAssignCCBMemberVariable...");
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBurstSprite", CCSprite *, this->mBurstSprite);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mTestTitleLabelTTF", CCLabelTTF *, this->mTestTitleLabelTTF);
 //    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBurstSprite", CCSprite *, this->mBurstSprite);
 //    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mTestTitleLabelTTF", CCLabelTTF *, this->mTestTitleLabelTTF);
     

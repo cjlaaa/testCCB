@@ -41,7 +41,8 @@ public:
     void onMenuTestClicked(cocos2d::CCObject * pSender);
     
     bool Init();
-
+    cocos2d::CCSprite * mBurstSprite;
+    cocos2d::CCLabelTTF * mTestTitleLabelTTF;
 };
 
 /* Forward declaration. */
