@@ -14,18 +14,18 @@ class MainScene :public cocos2d::CCLayer
 {
 public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
+//    virtual bool init();
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static cocos2d::CCScene* scene();
+    static cocos2d::CCScene* createMainScene();
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
     
     // implement the "static node()" method manually
-    CREATE_FUNC(MainScene);
+//    CREATE_FUNC(MainScene);
     
-    static CCNode* LoadCCB(CCScene*);
+    CCNode* LoadCCB(CCScene*);
     
     void CCBPlayCallback();
 //    static CCBAnimationManager* m_AnimationManager;
@@ -39,18 +39,23 @@ public:
     virtual void onNodeLoaded(cocos2d::CCNode * pNode, cocos2d::extension::CCNodeLoader * pNodeLoader);
     
     void onMenuTestClicked(cocos2d::CCObject * pSender);
+    
+    bool Init();
 
 };
 
 /* Forward declaration. */
-class CCBReader;
-
-class MainSceneLayerLoader : public cocos2d::extension::CCLayerLoader {
-public:
-    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(MainSceneLayerLoader, loader);
-    
-protected:
-    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(MainScene);
-};
+//class CCBReader;
+//
+//class MainSceneLayerLoader : public cocos2d::extension::CCLayerLoader {
+//public:
+//    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(MainSceneLayerLoader, loader);
+//    
+//protected:
+//    virtual MainScene * createCCNode(cocos2d::CCNode * pParent, cocos2d::extension::CCBReader * pCCBReader) { 
+//        return MainScene::create();
+//    }
+//
+//};
 
 #endif // __MainScene_SCENE_H__

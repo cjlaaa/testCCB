@@ -1,30 +1,30 @@
 #include "HelloWorldScene.h"
 
-CCScene* MainScene::scene()
+CCScene* MainScene::createMainScene()
 {
-    // 'scene' is an autorelease object
-    CCScene *scene = CCScene::create();
+    CCScene* scene = new CCScene;
     
-    // 'layer' is an autorelease object
-    MainScene *layer = MainScene::create();
-    
-    // add layer as a child to scene
-    scene->addChild(layer,0,1);
-    scene->addChild(LoadCCB(scene));
-    
-    // return the scene
-    return scene;
+    MainScene* pPlayer = new MainScene;
+    if (pPlayer && pPlayer->Init()==true)
+    {
+        pPlayer->autorelease();
+        scene->addChild(pPlayer);
+        return scene;
+    }
+    delete pPlayer;
+    delete scene;
+    return NULL;
 }
 
 // on "init" you need to initialize your instance
-bool MainScene::init()
+bool MainScene::Init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !CCLayer::init() )
-    {
-        return false;
-    }
+//    if ( !CCLayer::init() )
+//    {
+//        return false;
+//    }
     
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
@@ -55,7 +55,7 @@ bool MainScene::init()
     // create and initialize a label
     
     CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
-    pLabel->setString("xxx");
+//    pLabel->setString("xxx");
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
@@ -75,6 +75,25 @@ bool MainScene::init()
     
     setTouchEnabled(true);
     
+    /* Create an autorelease CCNodeLoaderLibrary. */
+    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    
+//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+    
+    /* Create an autorelease CCBReader. */
+    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+    
+    /* Read a ccbi file. */
+    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+    
+    ccbReader->release();
+    
+    if(node != NULL) {
+        this->addChild(node);
+        //        return node;
+    }
+
+    
     return true;
 }
 
@@ -83,7 +102,7 @@ CCNode* MainScene::LoadCCB(CCScene* scene)
     /* Create an autorelease CCNodeLoaderLibrary. */
     CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
     
-    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
     
     /* Create an autorelease CCBReader. */
     cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
@@ -127,9 +146,9 @@ void MainScene::onNodeLoaded(cocos2d::CCNode * pNode,  cocos2d::extension::CCNod
 void MainScene::onMenuTestClicked(cocos2d::CCObject * pSender)
 {
     CCLog("onMenuTestClicked");
-//    CCLabelTTF* pLabel = dynamic_cast<CCLabelTTF*>(getParent()->getChildByTag(1)->getChildByTag(1));
-//    CCLog("pLabel String %s",pLabel->getString());
-//    pLabel->setString("onMenuTestClicked");
+    CCLabelTTF* pLabel = dynamic_cast<CCLabelTTF*>(getChildByTag(1));
+    CCLog("pLabel String %s",pLabel->getString());
+    pLabel->setString("onMenuTestClicked");
 }
                         
 SEL_MenuHandler MainScene::onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName)
