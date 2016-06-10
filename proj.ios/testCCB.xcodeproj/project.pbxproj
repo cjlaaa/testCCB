@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F9FDB2F1D0AA77800FE0996 /* ccbResources in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB241D0AA77800FE0996 /* ccbResources */; };
+		0F9FDB301D0AA77800FE0996 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB251D0AA77800FE0996 /* fileLookup.plist */; };
+		0F9FDB311D0AA77800FE0996 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB261D0AA77800FE0996 /* fonts */; };
+		0F9FDB321D0AA77800FE0996 /* main in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB271D0AA77800FE0996 /* main */; };
+		0F9FDB331D0AA77800FE0996 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB281D0AA77800FE0996 /* main.js */; };
+		0F9FDB341D0AA77800FE0996 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB291D0AA77800FE0996 /* MainScene.ccbi */; };
+		0F9FDB351D0AA77800FE0996 /* MainScene.js in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB2A1D0AA77800FE0996 /* MainScene.js */; };
+		0F9FDB361D0AA77800FE0996 /* resources-ipad in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB2B1D0AA77800FE0996 /* resources-ipad */; };
+		0F9FDB371D0AA77800FE0996 /* resources-ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB2C1D0AA77800FE0996 /* resources-ipadhd */; };
+		0F9FDB381D0AA77800FE0996 /* resources-iphone in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB2D1D0AA77800FE0996 /* resources-iphone */; };
+		0F9FDB391D0AA77800FE0996 /* resources-iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB2E1D0AA77800FE0996 /* resources-iphonehd */; };
 		15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */; };
 		15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88D1682F7D5002FB0C5 /* b2CollideCircle.cpp */; };
 		15A3D9011682F7D5002FB0C5 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3D88E1682F7D5002FB0C5 /* b2CollideEdge.cpp */; };
@@ -238,6 +249,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F9FDB241D0AA77800FE0996 /* ccbResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccbResources; sourceTree = "<group>"; };
+		0F9FDB251D0AA77800FE0996 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fileLookup.plist; sourceTree = "<group>"; };
+		0F9FDB261D0AA77800FE0996 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		0F9FDB271D0AA77800FE0996 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; path = main; sourceTree = "<group>"; };
+		0F9FDB281D0AA77800FE0996 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		0F9FDB291D0AA77800FE0996 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
+		0F9FDB2A1D0AA77800FE0996 /* MainScene.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = MainScene.js; sourceTree = "<group>"; };
+		0F9FDB2B1D0AA77800FE0996 /* resources-ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-ipad"; sourceTree = "<group>"; };
+		0F9FDB2C1D0AA77800FE0996 /* resources-ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-ipadhd"; sourceTree = "<group>"; };
+		0F9FDB2D1D0AA77800FE0996 /* resources-iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-iphone"; sourceTree = "<group>"; };
+		0F9FDB2E1D0AA77800FE0996 /* resources-iphonehd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-iphonehd"; sourceTree = "<group>"; };
 		15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		15A3D8891682F7D5002FB0C5 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		15A3D88B1682F7D5002FB0C5 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
@@ -1476,6 +1498,17 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0F9FDB241D0AA77800FE0996 /* ccbResources */,
+				0F9FDB251D0AA77800FE0996 /* fileLookup.plist */,
+				0F9FDB261D0AA77800FE0996 /* fonts */,
+				0F9FDB271D0AA77800FE0996 /* main */,
+				0F9FDB281D0AA77800FE0996 /* main.js */,
+				0F9FDB291D0AA77800FE0996 /* MainScene.ccbi */,
+				0F9FDB2A1D0AA77800FE0996 /* MainScene.js */,
+				0F9FDB2B1D0AA77800FE0996 /* resources-ipad */,
+				0F9FDB2C1D0AA77800FE0996 /* resources-ipadhd */,
+				0F9FDB2D1D0AA77800FE0996 /* resources-iphone */,
+				0F9FDB2E1D0AA77800FE0996 /* resources-iphonehd */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -1561,20 +1594,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
+				0F9FDB381D0AA77800FE0996 /* resources-iphone in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
+				0F9FDB371D0AA77800FE0996 /* resources-ipadhd in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
+				0F9FDB321D0AA77800FE0996 /* main in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
+				0F9FDB351D0AA77800FE0996 /* MainScene.js in Resources */,
+				0F9FDB301D0AA77800FE0996 /* fileLookup.plist in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
+				0F9FDB341D0AA77800FE0996 /* MainScene.ccbi in Resources */,
 				1A9CE8881765A12C000E3062 /* json_internalarray.inl in Resources */,
 				1A9CE8891765A12C000E3062 /* json_internalmap.inl in Resources */,
+				0F9FDB361D0AA77800FE0996 /* resources-ipad in Resources */,
 				1A9CE88C1765A12C000E3062 /* json_valueiterator.inl in Resources */,
+				0F9FDB311D0AA77800FE0996 /* fonts in Resources */,
 				1A9CE88E1765A12C000E3062 /* sconscript in Resources */,
+				0F9FDB2F1D0AA77800FE0996 /* ccbResources in Resources */,
+				0F9FDB331D0AA77800FE0996 /* main.js in Resources */,
+				0F9FDB391D0AA77800FE0996 /* resources-iphonehd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1816,12 +1860,12 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
 				);
-				OTHER_CFLAGS = "-O2";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = testCCB;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1864,7 +1908,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
 				);
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",

@@ -15,8 +15,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
-
+    
     pDirector->setOpenGLView(pEGLView);
+    pEGLView->setDesignResolutionSize(640, 1136, kResolutionFixedWidth);
 	
     // turn on display FPS
     pDirector->setDisplayStats(true);
@@ -25,7 +26,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+    CCScene *pScene = MainScene::scene();
 
     // run
     pDirector->runWithScene(pScene);

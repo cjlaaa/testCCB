@@ -1,24 +1,23 @@
 #include "HelloWorldScene.h"
 
-USING_NS_CC;
-
-CCScene* HelloWorld::scene()
+CCScene* MainScene::scene()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
     // 'layer' is an autorelease object
-    HelloWorld *layer = HelloWorld::create();
-
+    MainScene *layer = MainScene::create();
+    
     // add layer as a child to scene
-    scene->addChild(layer);
-
+    scene->addChild(layer,0,1);
+    scene->addChild(LoadCCB(scene));
+    
     // return the scene
     return scene;
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool MainScene::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -39,7 +38,7 @@ bool HelloWorld::init()
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(HelloWorld::menuCloseCallback));
+                                        menu_selector(MainScene::menuCloseCallback));
     
 	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
                                 origin.y + pCloseItem->getContentSize().height/2));
@@ -56,15 +55,16 @@ bool HelloWorld::init()
     // create and initialize a label
     
     CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
+    pLabel->setString("xxx");
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - pLabel->getContentSize().height));
 
     // add the label as a child to this layer
-    this->addChild(pLabel, 1);
+    this->addChild(pLabel, 1,1);
 
-    // add "HelloWorld" splash screen"
+    // add "MainScene" splash screen"
     CCSprite* pSprite = CCSprite::create("HelloWorld.png");
 
     // position the sprite on the center of the screen
@@ -73,12 +73,133 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
     
+    setTouchEnabled(true);
+    
     return true;
 }
 
-
-void HelloWorld::menuCloseCallback(CCObject* pSender)
+CCNode* MainScene::LoadCCB(CCScene* scene)
 {
+    /* Create an autorelease CCNodeLoaderLibrary. */
+    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    
+    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+    
+    /* Create an autorelease CCBReader. */
+    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+//    CCBAnimationManager* AnimationManager = ccbReader->getAnimationManager();
+//    AnimationManager->runAnimations("Default Timeline");
+//    AnimationManager->setAnimationCompletedCallback(scene, callfunc_selector(MainScene::CCBPlayCallback));
+//    AnimationManager->runAnimationsForSequenceNamed("Default Timeline");
+    
+    /* Read a ccbi file. */
+    //    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", scene);
+    
+    ccbReader->release();
+    
+    if(node != NULL) {
+//        this->addChild(node);
+        return node;
+    }
+    
+    return NULL;
+}
+
+void MainScene::CCBPlayCallback()
+{
+    CCLog("CCBPlayCallback");
+}
+
+//void MainScene::registerWithTouchDispatcher()
+//{
+//    
+//}
+
+void MainScene::onNodeLoaded(cocos2d::CCNode * pNode,  cocos2d::extension::CCNodeLoader * pNodeLoader) {
+    CCLog("onNodeLoaded...");
+//    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
+//    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
+//    this->runAction(ccRepeatForever);
+}
+
+
+void MainScene::onMenuTestClicked(cocos2d::CCObject * pSender)
+{
+    CCLog("onMenuTestClicked");
+//    CCLabelTTF* pLabel = dynamic_cast<CCLabelTTF*>(getParent()->getChildByTag(1)->getChildByTag(1));
+//    CCLog("pLabel String %s",pLabel->getString());
+//    pLabel->setString("onMenuTestClicked");
+}
+                        
+SEL_MenuHandler MainScene::onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName)
+{
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onMenuTestClicked", MainScene::onMenuTestClicked);
+    return NULL;
+}
+
+SEL_CCControlHandler MainScene::onResolveCCBCCControlSelector(CCObject * pTarget, const char * pSelectorName) {
+    CCLog("onResolveCCBCCControlSelector...");
+//    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onMenuTestClicked", MainScene::onMenuTestClicked);
+//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onSpriteTestClicked", HelloCocosBuilderLayer::onSpriteTestClicked);
+//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onButtonTestClicked", HelloCocosBuilderLayer::onButtonTestClicked);
+//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onAnimationsTestClicked", HelloCocosBuilderLayer::onAnimationsTestClicked);
+//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onParticleSystemTestClicked", HelloCocosBuilderLayer::onParticleSystemTestClicked);
+//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onScrollViewTestClicked", HelloCocosBuilderLayer::onScrollViewTestClicked);
+//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onTimelineCallbackSoundClicked", HelloCocosBuilderLayer::onTimelineCallbackSoundClicked);
+    
+    return NULL;
+}
+
+bool MainScene::onAssignCCBMemberVariable(CCObject * pTarget, const char * pMemberVariableName, CCNode * pNode) {
+    CCLog("onAssignCCBMemberVariable...");
+//    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBurstSprite", CCSprite *, this->mBurstSprite);
+//    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mTestTitleLabelTTF", CCLabelTTF *, this->mTestTitleLabelTTF);
+    
+    return false;
+}
+
+bool MainScene::onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, cocos2d::extension::CCBValue* pCCBValue)
+{
+    CCLog("onAssignCCBCustomProperty...");
+    bool bRet = false;
+//    if (pTarget == this)
+//    {
+//        if (0 == strcmp(pMemberVariableName, "mCustomPropertyInt"))
+//        {
+//            this->mCustomPropertyInt = pCCBValue->getIntValue();
+//            CCLog("mCustomPropertyInt = %d", mCustomPropertyInt);
+//            bRet = true;
+//        }
+//        else if ( 0 == strcmp(pMemberVariableName, "mCustomPropertyFloat"))
+//        {
+//            this->mCustomPropertyFloat = pCCBValue->getFloatValue();
+//            CCLog("mCustomPropertyFloat = %f", mCustomPropertyFloat);
+//            bRet = true;
+//        }
+//        else if ( 0  == strcmp(pMemberVariableName, "mCustomPropertyBoolean"))
+//        {
+//            this->mCustomPropertyBoolean = pCCBValue->getBoolValue();
+//            CCLog("mCustomPropertyBoolean = %d", mCustomPropertyBoolean);
+//            bRet = true;
+//        }
+//        else if ( 0  == strcmp(pMemberVariableName, "mCustomPropertyString"))
+//        {
+//            this->mCustomPropertyString = pCCBValue->getStringValue();
+//            CCLog("mCustomPropertyString = %s", mCustomPropertyString.c_str());
+//            bRet = true;
+//        }
+//        
+//    }
+    
+    return bRet;
+}
+
+
+void MainScene::menuCloseCallback(CCObject* pSender)
+{
+//    LoadCCB();
+    
     CCDirector::sharedDirector()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
