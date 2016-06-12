@@ -93,42 +93,15 @@ bool MainScene::Init()
     
     if(node != NULL) {
         this->addChild(node);
-        //        return node;
     }
     
-    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
-    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
-    this->mBurstSprite->runAction(ccRepeatForever);
+//    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
+//    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
+//    this->mBurstSprite->runAction(ccRepeatForever);
+    
+    m_count = 0;
     
     return true;
-}
-
-CCNode* MainScene::LoadCCB(CCScene* scene)
-{
-    /* Create an autorelease CCNodeLoaderLibrary. */
-    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-    
-//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
-    
-    /* Create an autorelease CCBReader. */
-    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
-//    CCBAnimationManager* AnimationManager = ccbReader->getAnimationManager();
-//    AnimationManager->runAnimations("Default Timeline");
-//    AnimationManager->setAnimationCompletedCallback(scene, callfunc_selector(MainScene::CCBPlayCallback));
-//    AnimationManager->runAnimationsForSequenceNamed("Default Timeline");
-    
-    /* Read a ccbi file. */
-    //    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
-    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", scene);
-    
-    ccbReader->release();
-    
-    if(node != NULL) {
-//        this->addChild(node);
-        return node;
-    }
-    
-    return NULL;
 }
 
 void MainScene::CCBPlayCallback()
@@ -136,16 +109,8 @@ void MainScene::CCBPlayCallback()
     CCLog("CCBPlayCallback");
 }
 
-//void MainScene::registerWithTouchDispatcher()
-//{
-//    
-//}
-
 void MainScene::onNodeLoaded(cocos2d::CCNode * pNode,  cocos2d::extension::CCNodeLoader * pNodeLoader) {
     CCLog("onNodeLoaded...");
-//    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
-//    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
-//    this->runAction(ccRepeatForever);
 }
 
 void MainScene::onActionMenuClicked(CCObject* pSender)
@@ -167,11 +132,12 @@ void MainScene::onActionMenuClicked(CCObject* pSender)
 
 void MainScene::onMenuTestClicked(cocos2d::CCObject * pSender)
 {
-    CCLog("onMenuTestClicked");
-    CCLabelTTF* pLabel = dynamic_cast<CCLabelTTF*>(getChildByTag(1));
-    CCLog("pLabel String %s",pLabel->getString());
-    pLabel->setString("onMenuTestClicked");
-    mTestTitleLabelTTF->setString("战力123K");
+//    CCLog("onMenuTestClicked");
+//    CCLabelTTF* pLabel = dynamic_cast<CCLabelTTF*>(getChildByTag(1));
+//    CCLog("pLabel String %s",pLabel->getString());
+//    pLabel->setString("onMenuTestClicked");
+//    mTestTitleLabelTTF->setString("战力123K");
+    CCLog("%d",m_count++);
 }
                         
 SEL_MenuHandler MainScene::onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName)
@@ -183,19 +149,14 @@ SEL_MenuHandler MainScene::onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pT
 }
 SEL_CallFuncN MainScene::onResolveCCBCCCallFuncSelector(CCObject * pTarget, const char* pSelectorName)
 {
-    CCB_SELECTORRESOLVER_CALLFUNC_GLUE(this,"onCCBTestCallbacks",MainScene::onMenuTestClicked)
+    CCB_SELECTORRESOLVER_CALLFUNC_GLUE(this,"onCCBTestCallbacks",MainScene::onMenuTestClicked);
+    
     return NULL;
 };
 
 SEL_CCControlHandler MainScene::onResolveCCBCCControlSelector(CCObject * pTarget, const char * pSelectorName) {
     CCLog("onResolveCCBCCControlSelector...");
-//    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onMenuTestClicked", MainScene::onMenuTestClicked);
-//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onSpriteTestClicked", HelloCocosBuilderLayer::onSpriteTestClicked);
-//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onButtonTestClicked", HelloCocosBuilderLayer::onButtonTestClicked);
-//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onAnimationsTestClicked", HelloCocosBuilderLayer::onAnimationsTestClicked);
-//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onParticleSystemTestClicked", HelloCocosBuilderLayer::onParticleSystemTestClicked);
-//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onScrollViewTestClicked", HelloCocosBuilderLayer::onScrollViewTestClicked);
-//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onTimelineCallbackSoundClicked", HelloCocosBuilderLayer::onTimelineCallbackSoundClicked);
+//    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onMenuTestClicked", MainScene::onMenuTestClicked);
     
     return NULL;
 }
@@ -248,8 +209,6 @@ bool MainScene::onAssignCCBCustomProperty(CCObject* pTarget, const char* pMember
 
 void MainScene::menuCloseCallback(CCObject* pSender)
 {
-//    LoadCCB();
-    
     CCDirector::sharedDirector()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

@@ -24,9 +24,7 @@ public:
     
     // implement the "static node()" method manually
 //    CREATE_FUNC(MainScene);
-    
-    CCNode* LoadCCB(CCScene*);
-    
+
     void CCBPlayCallback();
 //    static CCBAnimationManager* m_AnimationManager;
     
@@ -48,6 +46,7 @@ public:
     
     CCBAnimationManager* m_AnimationManager;
     bool m_bMenuShow;
+    int m_count;
 };
 
 /* Forward declaration. */
