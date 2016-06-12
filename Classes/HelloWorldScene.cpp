@@ -85,8 +85,9 @@ bool MainScene::Init()
     
     /* Read a ccbi file. */
     CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
-    CCBAnimationManager* AnimationManager = ccbReader->getAnimationManager();
-    AnimationManager->runAnimationsForSequenceNamed("Default Timeline");
+    m_AnimationManager = ccbReader->getAnimationManager();
+    m_AnimationManager->runAnimationsForSequenceNamed("default");
+    m_bMenuShow = true;
     
     ccbReader->release();
     
@@ -147,6 +148,22 @@ void MainScene::onNodeLoaded(cocos2d::CCNode * pNode,  cocos2d::extension::CCNod
 //    this->runAction(ccRepeatForever);
 }
 
+void MainScene::onActionMenuClicked(CCObject* pSender)
+{
+    if(m_bMenuShow)
+    {
+        m_AnimationManager->runAnimationsForSequenceNamed("menu_action_in");
+        m_bMenuShow = false;
+        m_actionBtn->setNormalImage(CCSprite::create("mainUi_btn_gongneng.png"));
+        
+    }
+    else
+    {
+        m_AnimationManager->runAnimationsForSequenceNamed("menu_action_out");
+        m_bMenuShow = true;
+        m_actionBtn->setNormalImage(CCSprite::create("mainUi_btn_gongneng_2.png"));
+    }
+}
 
 void MainScene::onMenuTestClicked(cocos2d::CCObject * pSender)
 {
@@ -160,8 +177,15 @@ void MainScene::onMenuTestClicked(cocos2d::CCObject * pSender)
 SEL_MenuHandler MainScene::onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName)
 {
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onMenuTestClicked", MainScene::onMenuTestClicked);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onActionMenuClicked", MainScene::onActionMenuClicked);
+    
     return NULL;
 }
+SEL_CallFuncN MainScene::onResolveCCBCCCallFuncSelector(CCObject * pTarget, const char* pSelectorName)
+{
+    CCB_SELECTORRESOLVER_CALLFUNC_GLUE(this,"onCCBTestCallbacks",MainScene::onMenuTestClicked)
+    return NULL;
+};
 
 SEL_CCControlHandler MainScene::onResolveCCBCCControlSelector(CCObject * pTarget, const char * pSelectorName) {
     CCLog("onResolveCCBCCControlSelector...");
@@ -180,8 +204,7 @@ bool MainScene::onAssignCCBMemberVariable(CCObject * pTarget, const char * pMemb
     CCLog("onAssignCCBMemberVariable...");
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBurstSprite", CCSprite *, this->mBurstSprite);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mTestTitleLabelTTF", CCLabelTTF *, this->mTestTitleLabelTTF);
-//    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBurstSprite", CCSprite *, this->mBurstSprite);
-//    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mTestTitleLabelTTF", CCLabelTTF *, this->mTestTitleLabelTTF);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "m_actionBtn", CCMenuItemSprite *, this->m_actionBtn);
     
     return false;
 }

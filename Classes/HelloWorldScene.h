@@ -37,12 +37,17 @@ public:
     virtual bool onAssignCCBMemberVariable(cocos2d::CCObject * pTarget, const char * pMemberVariableName, cocos2d::CCNode * pNode);
     virtual bool onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, cocos2d::extension::CCBValue* pCCBValue);
     virtual void onNodeLoaded(cocos2d::CCNode * pNode, cocos2d::extension::CCNodeLoader * pNodeLoader);
-    
+    virtual SEL_CallFuncN onResolveCCBCCCallFuncSelector(CCObject * pTarget, const char* pSelectorName);
     void onMenuTestClicked(cocos2d::CCObject * pSender);
+    void onActionMenuClicked(CCObject* pSender);
     
     bool Init();
     cocos2d::CCSprite * mBurstSprite;
     cocos2d::CCLabelTTF * mTestTitleLabelTTF;
+    CCMenuItemSprite* m_actionBtn;
+    
+    CCBAnimationManager* m_AnimationManager;
+    bool m_bMenuShow;
 };
 
 /* Forward declaration. */

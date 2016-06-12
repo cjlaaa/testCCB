@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F12772E1D0D26BC00B6256A /* main in Resources */ = {isa = PBXBuildFile; fileRef = 0F12772D1D0D26BC00B6256A /* main */; };
+		0F1277311D0D27E500B6256A /* mainUi_btn_gongneng_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */; };
+		0F1277321D0D27E500B6256A /* mainUi_btn_gongneng.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */; };
 		0F9FDB2F1D0AA77800FE0996 /* ccbResources in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB241D0AA77800FE0996 /* ccbResources */; };
 		0F9FDB301D0AA77800FE0996 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB251D0AA77800FE0996 /* fileLookup.plist */; };
 		0F9FDB311D0AA77800FE0996 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB261D0AA77800FE0996 /* fonts */; };
-		0F9FDB321D0AA77800FE0996 /* main in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB271D0AA77800FE0996 /* main */; };
 		0F9FDB331D0AA77800FE0996 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB281D0AA77800FE0996 /* main.js */; };
 		0F9FDB341D0AA77800FE0996 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB291D0AA77800FE0996 /* MainScene.ccbi */; };
 		0F9FDB351D0AA77800FE0996 /* MainScene.js in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB2A1D0AA77800FE0996 /* MainScene.js */; };
@@ -249,10 +251,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F12772D1D0D26BC00B6256A /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; path = main; sourceTree = "<group>"; };
+		0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainUi_btn_gongneng_2.png; path = main/mainUiFeeling/mainUi_btn_gongneng_2.png; sourceTree = "<group>"; };
+		0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainUi_btn_gongneng.png; path = main/mainUiFeeling/mainUi_btn_gongneng.png; sourceTree = "<group>"; };
 		0F9FDB241D0AA77800FE0996 /* ccbResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccbResources; sourceTree = "<group>"; };
 		0F9FDB251D0AA77800FE0996 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fileLookup.plist; sourceTree = "<group>"; };
 		0F9FDB261D0AA77800FE0996 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		0F9FDB271D0AA77800FE0996 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; path = main; sourceTree = "<group>"; };
 		0F9FDB281D0AA77800FE0996 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 		0F9FDB291D0AA77800FE0996 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
 		0F9FDB2A1D0AA77800FE0996 /* MainScene.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = MainScene.js; sourceTree = "<group>"; };
@@ -1498,10 +1502,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */,
+				0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */,
+				0F12772D1D0D26BC00B6256A /* main */,
 				0F9FDB241D0AA77800FE0996 /* ccbResources */,
 				0F9FDB251D0AA77800FE0996 /* fileLookup.plist */,
 				0F9FDB261D0AA77800FE0996 /* fonts */,
-				0F9FDB271D0AA77800FE0996 /* main */,
 				0F9FDB281D0AA77800FE0996 /* main.js */,
 				0F9FDB291D0AA77800FE0996 /* MainScene.ccbi */,
 				0F9FDB2A1D0AA77800FE0996 /* MainScene.js */,
@@ -1593,12 +1599,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1277311D0D27E500B6256A /* mainUi_btn_gongneng_2.png in Resources */,
+				0F1277321D0D27E500B6256A /* mainUi_btn_gongneng.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				0F9FDB381D0AA77800FE0996 /* resources-iphone in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				0F9FDB371D0AA77800FE0996 /* resources-ipadhd in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
-				0F9FDB321D0AA77800FE0996 /* main in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
@@ -1615,6 +1622,7 @@
 				0F9FDB361D0AA77800FE0996 /* resources-ipad in Resources */,
 				1A9CE88C1765A12C000E3062 /* json_valueiterator.inl in Resources */,
 				0F9FDB311D0AA77800FE0996 /* fonts in Resources */,
+				0F12772E1D0D26BC00B6256A /* main in Resources */,
 				1A9CE88E1765A12C000E3062 /* sconscript in Resources */,
 				0F9FDB2F1D0AA77800FE0996 /* ccbResources in Resources */,
 				0F9FDB331D0AA77800FE0996 /* main.js in Resources */,
