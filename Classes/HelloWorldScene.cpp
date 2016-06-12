@@ -206,12 +206,16 @@ bool MainScene::onAssignCCBCustomProperty(CCObject* pTarget, const char* pMember
     return bRet;
 }
 
-
 void MainScene::menuCloseCallback(CCObject* pSender)
 {
-    CCDirector::sharedDirector()->end();
+    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+    CCNode * node1 = ccbReader->readNodeGraphFromFile("testCallbacks.ccbi", this);
+    addChild(node1);
+    
+//    CCDirector::sharedDirector()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
+//    exit(0);
 #endif
 }
