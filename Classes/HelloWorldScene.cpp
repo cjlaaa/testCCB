@@ -73,27 +73,34 @@ bool MainScene::Init()
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
     
+    //test setBlendFunc
+    CCSprite* pSp = CCSprite::create("Icon-144.png");
+    addChild(pSp);
+    pSp->setPosition(ccp(visibleSize.width/2,visibleSize.height/3));
+    ccBlendFunc cbl = { GL_SRC_ALPHA , GL_ONE };
+    pSp->setBlendFunc(cbl);
+    
     setTouchEnabled(true);
     
-    /* Create an autorelease CCNodeLoaderLibrary. */
-    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-    
-//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
-    
-    /* Create an autorelease CCBReader. */
-    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
-    
-    /* Read a ccbi file. */
-    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
-    m_AnimationManager = ccbReader->getAnimationManager();
-    m_AnimationManager->runAnimationsForSequenceNamed("default");
-    m_bMenuShow = true;
-    
-    ccbReader->release();
-    
-    if(node != NULL) {
-        this->addChild(node);
-    }
+//    /* Create an autorelease CCNodeLoaderLibrary. */
+//    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    
+////    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+//    
+//    /* Create an autorelease CCBReader. */
+//    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+//    
+//    /* Read a ccbi file. */
+//    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+//    m_AnimationManager = ccbReader->getAnimationManager();
+//    m_AnimationManager->runAnimationsForSequenceNamed("default");
+//    m_bMenuShow = true;
+//    
+//    ccbReader->release();
+//    
+//    if(node != NULL) {
+//        this->addChild(node);
+//    }
     
 //    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
 //    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
