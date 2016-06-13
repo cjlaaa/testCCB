@@ -13,22 +13,11 @@ class MainScene :public cocos2d::CCLayer
 , public cocos2d::extension::CCNodeLoaderListener
 {
 public:
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 //    virtual bool init();
-    
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::CCScene* createMainScene();
-    
-    // a selector callback
     void menuCloseCallback(CCObject* pSender);
-    
-    // implement the "static node()" method manually
 //    CREATE_FUNC(MainScene);
-
     void CCBPlayCallback();
-//    static CCBAnimationManager* m_AnimationManager;
-    
-//    virtual void registerWithTouchDispatcher();
     
     virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName);
     virtual cocos2d::extension::SEL_CCControlHandler onResolveCCBCCControlSelector(cocos2d::CCObject * pTarget, const char * pSelectorName);

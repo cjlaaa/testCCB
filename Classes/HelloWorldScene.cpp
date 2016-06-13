@@ -16,24 +16,11 @@ CCScene* MainScene::createMainScene()
     return NULL;
 }
 
-// on "init" you need to initialize your instance
 bool MainScene::Init()
 {
-    //////////////////////////////
-    // 1. super init first
-//    if ( !CCLayer::init() )
-//    {
-//        return false;
-//    }
-    
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
     CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
                                         "CloseNormal.png",
                                         "CloseSelected.png",
@@ -42,36 +29,35 @@ bool MainScene::Init()
     
 	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
                                 origin.y + pCloseItem->getContentSize().height/2));
-
-    // create menu, it's an autorelease object
     CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-    
     CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
-//    pLabel->setString("xxx");
-    
-    // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - pLabel->getContentSize().height));
-
-    // add the label as a child to this layer
     this->addChild(pLabel, 1,1);
 
-    // add "MainScene" splash screen"
     CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
     pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
+    
+    setTouchEnabled(true);
+    
+    /* Create an autorelease CCNodeLoaderLibrary. */
+    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+    /* Create an autorelease CCBReader. */
+    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+    /* Read a ccbi file. */
+    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+    m_AnimationManager = ccbReader->getAnimationManager();
+    m_AnimationManager->runAnimationsForSequenceNamed("default");
+    m_bMenuShow = true;
+    ccbReader->release();
+    if(node != NULL) {
+        this->addChild(node);
+    }
     
     //test setBlendFunc
     CCSprite* pSp = CCSprite::create("Icon-144.png");
@@ -79,28 +65,6 @@ bool MainScene::Init()
     pSp->setPosition(ccp(visibleSize.width/2,visibleSize.height/3));
     ccBlendFunc cbl = { GL_SRC_ALPHA , GL_ONE };
     pSp->setBlendFunc(cbl);
-    
-    setTouchEnabled(true);
-    
-//    /* Create an autorelease CCNodeLoaderLibrary. */
-//    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-//    
-////    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
-//    
-//    /* Create an autorelease CCBReader. */
-//    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
-//    
-//    /* Read a ccbi file. */
-//    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
-//    m_AnimationManager = ccbReader->getAnimationManager();
-//    m_AnimationManager->runAnimationsForSequenceNamed("default");
-//    m_bMenuShow = true;
-//    
-//    ccbReader->release();
-//    
-//    if(node != NULL) {
-//        this->addChild(node);
-//    }
     
 //    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
 //    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
