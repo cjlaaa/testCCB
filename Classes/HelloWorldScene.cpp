@@ -1,5 +1,6 @@
 #include "HelloWorldScene.h"
 #include "ShaderUtils.h"
+#include "cocos2dFilters.h"
 
 CCScene* MainScene::createMainScene()
 {
@@ -60,9 +61,27 @@ bool MainScene::Init()
 //        this->addChild(node);
 //    }
     
-    CCSprite* pSp = CCSprite::create("Icon-144.png");
-    addChild(pSp,0,100);
-    pSp->setPosition(ccp(visibleSize.width/2,visibleSize.height/3));
+//    CCSprite* pSp = CCSprite::create("Icon-144.png");
+//    addChild(pSp,0,100);
+//    pSp->setPosition(ccp(visibleSize.width/2,visibleSize.height/3));
+    
+    CCFilteredSpriteWithOne* pSpOne = CCFilteredSpriteWithOne::create("Icon-144.png");
+    addChild(pSpOne);
+    pSpOne->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
+    CCGrayFilter* pF = CCGrayFilter::create(ccc4f(0.2, 0.3, 0.5, 0.1));
+    pSpOne->setFilter(pF);
+    
+    CCFilteredSpriteWithMulti* pSpMulti = CCFilteredSpriteWithMulti::create("Icon-144.png");
+    addChild(pSpMulti);
+    pSpMulti->setPosition(ccp(visibleSize.width/2,visibleSize.height/4));
+    CCHueFilter* pF1 = CCHueFilter::create(240);
+    CCSaturationFilter* pF2 = CCSaturationFilter::create(1.5);
+    CCBrightnessFilter* pF3 = CCBrightnessFilter::create(-0.4);
+    CCArray* pArray = CCArray::create();
+    pArray->addObject(pF1);
+    pArray->addObject(pF2);
+    pArray->addObject(pF3);
+    pSpMulti->setFilters(pArray);
     
 //    //test setBlendFunc
 //    ccBlendFunc cbl = { GL_SRC_ALPHA , GL_ONE };
@@ -73,7 +92,7 @@ bool MainScene::Init()
     
     //test Shader Utils
 //    ShaderUtils::alphaMask(pSp, "Icon-114.png");
-    ShaderUtils::colorHSL(pSp, 120, 60);
+//    ShaderUtils::colorHSL(pSp, 120, 60);
     
     m_count = 0;
     

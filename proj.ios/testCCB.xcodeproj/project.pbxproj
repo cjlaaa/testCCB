@@ -12,6 +12,24 @@
 		0F1277321D0D27E500B6256A /* mainUi_btn_gongneng.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */; };
 		0F12773D1D0D5ED100B6256A /* testCallbacks.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0F12773C1D0D5ED100B6256A /* testCallbacks.ccbi */; };
 		0F127D3A1D0EA93100B6256A /* ShaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D381D0EA93100B6256A /* ShaderUtils.cpp */; };
+		0F127D831D0FA3FF00B6256A /* CCBlurFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D401D0FA3FF00B6256A /* CCBlurFilter.cpp */; };
+		0F127D841D0FA3FF00B6256A /* CCBrightnessFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D421D0FA3FF00B6256A /* CCBrightnessFilter.cpp */; };
+		0F127D851D0FA3FF00B6256A /* CCContrastFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D441D0FA3FF00B6256A /* CCContrastFilter.cpp */; };
+		0F127D861D0FA3FF00B6256A /* CCDropShadowFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D461D0FA3FF00B6256A /* CCDropShadowFilter.cpp */; };
+		0F127D871D0FA3FF00B6256A /* CCExposureFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D481D0FA3FF00B6256A /* CCExposureFilter.cpp */; };
+		0F127D881D0FA3FF00B6256A /* CCFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D4A1D0FA3FF00B6256A /* CCFilter.cpp */; };
+		0F127D891D0FA3FF00B6256A /* CCGammaFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D4C1D0FA3FF00B6256A /* CCGammaFilter.cpp */; };
+		0F127D8A1D0FA3FF00B6256A /* CCGrayFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D4E1D0FA3FF00B6256A /* CCGrayFilter.cpp */; };
+		0F127D8B1D0FA3FF00B6256A /* CCHazeFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D501D0FA3FF00B6256A /* CCHazeFilter.cpp */; };
+		0F127D8C1D0FA3FF00B6256A /* CCHueFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D521D0FA3FF00B6256A /* CCHueFilter.cpp */; };
+		0F127D8D1D0FA3FF00B6256A /* CCMaskFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D541D0FA3FF00B6256A /* CCMaskFilter.cpp */; };
+		0F127D8E1D0FA3FF00B6256A /* CCRGBFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D561D0FA3FF00B6256A /* CCRGBFilter.cpp */; };
+		0F127D8F1D0FA3FF00B6256A /* CCSaturationFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D581D0FA3FF00B6256A /* CCSaturationFilter.cpp */; };
+		0F127D901D0FA3FF00B6256A /* CCSepiaFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D5A1D0FA3FF00B6256A /* CCSepiaFilter.cpp */; };
+		0F127D911D0FA3FF00B6256A /* CCSharpenFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D5C1D0FA3FF00B6256A /* CCSharpenFilter.cpp */; };
+		0F127D921D0FA3FF00B6256A /* CCTestFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D5E1D0FA3FF00B6256A /* CCTestFilter.cpp */; };
+		0F127D931D0FA3FF00B6256A /* CCFilteredSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D611D0FA3FF00B6256A /* CCFilteredSprite.cpp */; };
+		0F127D941D0FA3FF00B6256A /* ccFilterShaders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D811D0FA3FF00B6256A /* ccFilterShaders.cpp */; };
 		0F9FDB2F1D0AA77800FE0996 /* ccbResources in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB241D0AA77800FE0996 /* ccbResources */; };
 		0F9FDB301D0AA77800FE0996 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB251D0AA77800FE0996 /* fileLookup.plist */; };
 		0F9FDB311D0AA77800FE0996 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB261D0AA77800FE0996 /* fonts */; };
@@ -259,6 +277,72 @@
 		0F12773C1D0D5ED100B6256A /* testCallbacks.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = testCallbacks.ccbi; sourceTree = "<group>"; };
 		0F127D381D0EA93100B6256A /* ShaderUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderUtils.cpp; path = ../Classes/ShaderUtils.cpp; sourceTree = "<group>"; };
 		0F127D391D0EA93100B6256A /* ShaderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderUtils.h; path = ../Classes/ShaderUtils.h; sourceTree = "<group>"; };
+		0F127D3E1D0FA3FF00B6256A /* cocos2dFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2dFilters.h; sourceTree = "<group>"; };
+		0F127D401D0FA3FF00B6256A /* CCBlurFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBlurFilter.cpp; sourceTree = "<group>"; };
+		0F127D411D0FA3FF00B6256A /* CCBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBlurFilter.h; sourceTree = "<group>"; };
+		0F127D421D0FA3FF00B6256A /* CCBrightnessFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBrightnessFilter.cpp; sourceTree = "<group>"; };
+		0F127D431D0FA3FF00B6256A /* CCBrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBrightnessFilter.h; sourceTree = "<group>"; };
+		0F127D441D0FA3FF00B6256A /* CCContrastFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCContrastFilter.cpp; sourceTree = "<group>"; };
+		0F127D451D0FA3FF00B6256A /* CCContrastFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCContrastFilter.h; sourceTree = "<group>"; };
+		0F127D461D0FA3FF00B6256A /* CCDropShadowFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCDropShadowFilter.cpp; sourceTree = "<group>"; };
+		0F127D471D0FA3FF00B6256A /* CCDropShadowFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropShadowFilter.h; sourceTree = "<group>"; };
+		0F127D481D0FA3FF00B6256A /* CCExposureFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCExposureFilter.cpp; sourceTree = "<group>"; };
+		0F127D491D0FA3FF00B6256A /* CCExposureFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExposureFilter.h; sourceTree = "<group>"; };
+		0F127D4A1D0FA3FF00B6256A /* CCFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCFilter.cpp; sourceTree = "<group>"; };
+		0F127D4B1D0FA3FF00B6256A /* CCFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilter.h; sourceTree = "<group>"; };
+		0F127D4C1D0FA3FF00B6256A /* CCGammaFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCGammaFilter.cpp; sourceTree = "<group>"; };
+		0F127D4D1D0FA3FF00B6256A /* CCGammaFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGammaFilter.h; sourceTree = "<group>"; };
+		0F127D4E1D0FA3FF00B6256A /* CCGrayFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCGrayFilter.cpp; sourceTree = "<group>"; };
+		0F127D4F1D0FA3FF00B6256A /* CCGrayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGrayFilter.h; sourceTree = "<group>"; };
+		0F127D501D0FA3FF00B6256A /* CCHazeFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCHazeFilter.cpp; sourceTree = "<group>"; };
+		0F127D511D0FA3FF00B6256A /* CCHazeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHazeFilter.h; sourceTree = "<group>"; };
+		0F127D521D0FA3FF00B6256A /* CCHueFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCHueFilter.cpp; sourceTree = "<group>"; };
+		0F127D531D0FA3FF00B6256A /* CCHueFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHueFilter.h; sourceTree = "<group>"; };
+		0F127D541D0FA3FF00B6256A /* CCMaskFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCMaskFilter.cpp; sourceTree = "<group>"; };
+		0F127D551D0FA3FF00B6256A /* CCMaskFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMaskFilter.h; sourceTree = "<group>"; };
+		0F127D561D0FA3FF00B6256A /* CCRGBFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCRGBFilter.cpp; sourceTree = "<group>"; };
+		0F127D571D0FA3FF00B6256A /* CCRGBFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRGBFilter.h; sourceTree = "<group>"; };
+		0F127D581D0FA3FF00B6256A /* CCSaturationFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSaturationFilter.cpp; sourceTree = "<group>"; };
+		0F127D591D0FA3FF00B6256A /* CCSaturationFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSaturationFilter.h; sourceTree = "<group>"; };
+		0F127D5A1D0FA3FF00B6256A /* CCSepiaFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSepiaFilter.cpp; sourceTree = "<group>"; };
+		0F127D5B1D0FA3FF00B6256A /* CCSepiaFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSepiaFilter.h; sourceTree = "<group>"; };
+		0F127D5C1D0FA3FF00B6256A /* CCSharpenFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSharpenFilter.cpp; sourceTree = "<group>"; };
+		0F127D5D1D0FA3FF00B6256A /* CCSharpenFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSharpenFilter.h; sourceTree = "<group>"; };
+		0F127D5E1D0FA3FF00B6256A /* CCTestFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCTestFilter.cpp; sourceTree = "<group>"; };
+		0F127D5F1D0FA3FF00B6256A /* CCTestFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTestFilter.h; sourceTree = "<group>"; };
+		0F127D611D0FA3FF00B6256A /* CCFilteredSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCFilteredSprite.cpp; sourceTree = "<group>"; };
+		0F127D621D0FA3FF00B6256A /* CCFilteredSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilteredSprite.h; sourceTree = "<group>"; };
+		0F127D641D0FA3FF00B6256A /* ccFilterShader_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_blur_frag.h; sourceTree = "<group>"; };
+		0F127D651D0FA3FF00B6256A /* ccFilterShader_brightness_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_brightness_frag.h; sourceTree = "<group>"; };
+		0F127D661D0FA3FF00B6256A /* ccFilterShader_colorramp_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_colorramp_frag.h; sourceTree = "<group>"; };
+		0F127D671D0FA3FF00B6256A /* ccFilterShader_contrast_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_contrast_frag.h; sourceTree = "<group>"; };
+		0F127D681D0FA3FF00B6256A /* ccFilterShader_drop_shadow_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_drop_shadow_frag.h; sourceTree = "<group>"; };
+		0F127D691D0FA3FF00B6256A /* ccFilterShader_drop_shadow_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_drop_shadow_vert.h; sourceTree = "<group>"; };
+		0F127D6A1D0FA3FF00B6256A /* ccFilterShader_emboss_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_emboss_frag.h; sourceTree = "<group>"; };
+		0F127D6B1D0FA3FF00B6256A /* ccFilterShader_embossmov_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_embossmov_frag.h; sourceTree = "<group>"; };
+		0F127D6C1D0FA3FF00B6256A /* ccFilterShader_exposure_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_exposure_frag.h; sourceTree = "<group>"; };
+		0F127D6D1D0FA3FF00B6256A /* ccFilterShader_gamma_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gamma_frag.h; sourceTree = "<group>"; };
+		0F127D6E1D0FA3FF00B6256A /* ccFilterShader_gaussian_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gaussian_blur_frag.h; sourceTree = "<group>"; };
+		0F127D6F1D0FA3FF00B6256A /* ccFilterShader_gaussian_hblur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gaussian_hblur_frag.h; sourceTree = "<group>"; };
+		0F127D701D0FA3FF00B6256A /* ccFilterShader_gaussian_vblur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gaussian_vblur_frag.h; sourceTree = "<group>"; };
+		0F127D711D0FA3FF00B6256A /* ccFilterShader_grass_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_grass_frag.h; sourceTree = "<group>"; };
+		0F127D721D0FA3FF00B6256A /* ccFilterShader_gray_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_gray_frag.h; sourceTree = "<group>"; };
+		0F127D731D0FA3FF00B6256A /* ccFilterShader_haze_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_haze_frag.h; sourceTree = "<group>"; };
+		0F127D741D0FA3FF00B6256A /* ccFilterShader_hblur_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_hblur_vert.h; sourceTree = "<group>"; };
+		0F127D751D0FA3FF00B6256A /* ccFilterShader_hue_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_hue_frag.h; sourceTree = "<group>"; };
+		0F127D761D0FA3FF00B6256A /* ccFilterShader_motion_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_motion_blur_frag.h; sourceTree = "<group>"; };
+		0F127D771D0FA3FF00B6256A /* ccFilterShader_motion_blur_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_motion_blur_vert.h; sourceTree = "<group>"; };
+		0F127D781D0FA3FF00B6256A /* ccFilterShader_rgb_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_rgb_frag.h; sourceTree = "<group>"; };
+		0F127D791D0FA3FF00B6256A /* ccFilterShader_saturation_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_saturation_frag.h; sourceTree = "<group>"; };
+		0F127D7A1D0FA3FF00B6256A /* ccFilterShader_sepia_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_sepia_frag.h; sourceTree = "<group>"; };
+		0F127D7B1D0FA3FF00B6256A /* ccFilterShader_sharpen_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_sharpen_frag.h; sourceTree = "<group>"; };
+		0F127D7C1D0FA3FF00B6256A /* ccFilterShader_sharpen_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_sharpen_vert.h; sourceTree = "<group>"; };
+		0F127D7D1D0FA3FF00B6256A /* ccFilterShader_test_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_test_frag.h; sourceTree = "<group>"; };
+		0F127D7E1D0FA3FF00B6256A /* ccFilterShader_test_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_test_vert.h; sourceTree = "<group>"; };
+		0F127D7F1D0FA3FF00B6256A /* ccFilterShader_vblur_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_vblur_vert.h; sourceTree = "<group>"; };
+		0F127D801D0FA3FF00B6256A /* ccFilterShader_zoom_blur_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShader_zoom_blur_frag.h; sourceTree = "<group>"; };
+		0F127D811D0FA3FF00B6256A /* ccFilterShaders.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ccFilterShaders.cpp; sourceTree = "<group>"; };
+		0F127D821D0FA3FF00B6256A /* ccFilterShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccFilterShaders.h; sourceTree = "<group>"; };
 		0F9FDB241D0AA77800FE0996 /* ccbResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccbResources; sourceTree = "<group>"; };
 		0F9FDB251D0AA77800FE0996 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fileLookup.plist; sourceTree = "<group>"; };
 		0F9FDB261D0AA77800FE0996 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
@@ -726,6 +810,104 @@
 			);
 			name = ios;
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0F127D3D1D0FA3FF00B6256A /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				0F127D3E1D0FA3FF00B6256A /* cocos2dFilters.h */,
+				0F127D3F1D0FA3FF00B6256A /* filters */,
+				0F127D601D0FA3FF00B6256A /* nodes */,
+				0F127D631D0FA3FF00B6256A /* shaders */,
+			);
+			name = filters;
+			path = ../Classes/filters;
+			sourceTree = "<group>";
+		};
+		0F127D3F1D0FA3FF00B6256A /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				0F127D401D0FA3FF00B6256A /* CCBlurFilter.cpp */,
+				0F127D411D0FA3FF00B6256A /* CCBlurFilter.h */,
+				0F127D421D0FA3FF00B6256A /* CCBrightnessFilter.cpp */,
+				0F127D431D0FA3FF00B6256A /* CCBrightnessFilter.h */,
+				0F127D441D0FA3FF00B6256A /* CCContrastFilter.cpp */,
+				0F127D451D0FA3FF00B6256A /* CCContrastFilter.h */,
+				0F127D461D0FA3FF00B6256A /* CCDropShadowFilter.cpp */,
+				0F127D471D0FA3FF00B6256A /* CCDropShadowFilter.h */,
+				0F127D481D0FA3FF00B6256A /* CCExposureFilter.cpp */,
+				0F127D491D0FA3FF00B6256A /* CCExposureFilter.h */,
+				0F127D4A1D0FA3FF00B6256A /* CCFilter.cpp */,
+				0F127D4B1D0FA3FF00B6256A /* CCFilter.h */,
+				0F127D4C1D0FA3FF00B6256A /* CCGammaFilter.cpp */,
+				0F127D4D1D0FA3FF00B6256A /* CCGammaFilter.h */,
+				0F127D4E1D0FA3FF00B6256A /* CCGrayFilter.cpp */,
+				0F127D4F1D0FA3FF00B6256A /* CCGrayFilter.h */,
+				0F127D501D0FA3FF00B6256A /* CCHazeFilter.cpp */,
+				0F127D511D0FA3FF00B6256A /* CCHazeFilter.h */,
+				0F127D521D0FA3FF00B6256A /* CCHueFilter.cpp */,
+				0F127D531D0FA3FF00B6256A /* CCHueFilter.h */,
+				0F127D541D0FA3FF00B6256A /* CCMaskFilter.cpp */,
+				0F127D551D0FA3FF00B6256A /* CCMaskFilter.h */,
+				0F127D561D0FA3FF00B6256A /* CCRGBFilter.cpp */,
+				0F127D571D0FA3FF00B6256A /* CCRGBFilter.h */,
+				0F127D581D0FA3FF00B6256A /* CCSaturationFilter.cpp */,
+				0F127D591D0FA3FF00B6256A /* CCSaturationFilter.h */,
+				0F127D5A1D0FA3FF00B6256A /* CCSepiaFilter.cpp */,
+				0F127D5B1D0FA3FF00B6256A /* CCSepiaFilter.h */,
+				0F127D5C1D0FA3FF00B6256A /* CCSharpenFilter.cpp */,
+				0F127D5D1D0FA3FF00B6256A /* CCSharpenFilter.h */,
+				0F127D5E1D0FA3FF00B6256A /* CCTestFilter.cpp */,
+				0F127D5F1D0FA3FF00B6256A /* CCTestFilter.h */,
+			);
+			path = filters;
+			sourceTree = "<group>";
+		};
+		0F127D601D0FA3FF00B6256A /* nodes */ = {
+			isa = PBXGroup;
+			children = (
+				0F127D611D0FA3FF00B6256A /* CCFilteredSprite.cpp */,
+				0F127D621D0FA3FF00B6256A /* CCFilteredSprite.h */,
+			);
+			path = nodes;
+			sourceTree = "<group>";
+		};
+		0F127D631D0FA3FF00B6256A /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				0F127D641D0FA3FF00B6256A /* ccFilterShader_blur_frag.h */,
+				0F127D651D0FA3FF00B6256A /* ccFilterShader_brightness_frag.h */,
+				0F127D661D0FA3FF00B6256A /* ccFilterShader_colorramp_frag.h */,
+				0F127D671D0FA3FF00B6256A /* ccFilterShader_contrast_frag.h */,
+				0F127D681D0FA3FF00B6256A /* ccFilterShader_drop_shadow_frag.h */,
+				0F127D691D0FA3FF00B6256A /* ccFilterShader_drop_shadow_vert.h */,
+				0F127D6A1D0FA3FF00B6256A /* ccFilterShader_emboss_frag.h */,
+				0F127D6B1D0FA3FF00B6256A /* ccFilterShader_embossmov_frag.h */,
+				0F127D6C1D0FA3FF00B6256A /* ccFilterShader_exposure_frag.h */,
+				0F127D6D1D0FA3FF00B6256A /* ccFilterShader_gamma_frag.h */,
+				0F127D6E1D0FA3FF00B6256A /* ccFilterShader_gaussian_blur_frag.h */,
+				0F127D6F1D0FA3FF00B6256A /* ccFilterShader_gaussian_hblur_frag.h */,
+				0F127D701D0FA3FF00B6256A /* ccFilterShader_gaussian_vblur_frag.h */,
+				0F127D711D0FA3FF00B6256A /* ccFilterShader_grass_frag.h */,
+				0F127D721D0FA3FF00B6256A /* ccFilterShader_gray_frag.h */,
+				0F127D731D0FA3FF00B6256A /* ccFilterShader_haze_frag.h */,
+				0F127D741D0FA3FF00B6256A /* ccFilterShader_hblur_vert.h */,
+				0F127D751D0FA3FF00B6256A /* ccFilterShader_hue_frag.h */,
+				0F127D761D0FA3FF00B6256A /* ccFilterShader_motion_blur_frag.h */,
+				0F127D771D0FA3FF00B6256A /* ccFilterShader_motion_blur_vert.h */,
+				0F127D781D0FA3FF00B6256A /* ccFilterShader_rgb_frag.h */,
+				0F127D791D0FA3FF00B6256A /* ccFilterShader_saturation_frag.h */,
+				0F127D7A1D0FA3FF00B6256A /* ccFilterShader_sepia_frag.h */,
+				0F127D7B1D0FA3FF00B6256A /* ccFilterShader_sharpen_frag.h */,
+				0F127D7C1D0FA3FF00B6256A /* ccFilterShader_sharpen_vert.h */,
+				0F127D7D1D0FA3FF00B6256A /* ccFilterShader_test_frag.h */,
+				0F127D7E1D0FA3FF00B6256A /* ccFilterShader_test_vert.h */,
+				0F127D7F1D0FA3FF00B6256A /* ccFilterShader_vblur_vert.h */,
+				0F127D801D0FA3FF00B6256A /* ccFilterShader_zoom_blur_frag.h */,
+				0F127D811D0FA3FF00B6256A /* ccFilterShaders.cpp */,
+				0F127D821D0FA3FF00B6256A /* ccFilterShaders.h */,
+			);
+			path = shaders;
 			sourceTree = "<group>";
 		};
 		15A3D87F1682F7B3002FB0C5 /* Products */ = {
@@ -1206,6 +1388,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0F127D3D1D0FA3FF00B6256A /* filters */,
 				0F127D381D0EA93100B6256A /* ShaderUtils.cpp */,
 				0F127D391D0EA93100B6256A /* ShaderUtils.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
@@ -1646,6 +1829,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F127D8A1D0FA3FF00B6256A /* CCGrayFilter.cpp in Sources */,
 				15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */,
 				15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */,
 				15A3D9011682F7D5002FB0C5 /* b2CollideEdge.cpp in Sources */,
@@ -1672,6 +1856,8 @@
 				15A3D9161682F7D5002FB0C5 /* b2WorldCallbacks.cpp in Sources */,
 				15A3D9171682F7D5002FB0C5 /* b2ChainAndCircleContact.cpp in Sources */,
 				15A3D9181682F7D5002FB0C5 /* b2ChainAndPolygonContact.cpp in Sources */,
+				0F127D841D0FA3FF00B6256A /* CCBrightnessFilter.cpp in Sources */,
+				0F127D881D0FA3FF00B6256A /* CCFilter.cpp in Sources */,
 				15A3D9191682F7D5002FB0C5 /* b2CircleContact.cpp in Sources */,
 				15A3D91A1682F7D5002FB0C5 /* b2Contact.cpp in Sources */,
 				15A3D91B1682F7D5002FB0C5 /* b2ContactSolver.cpp in Sources */,
@@ -1679,6 +1865,7 @@
 				15A3D91D1682F7D5002FB0C5 /* b2EdgeAndPolygonContact.cpp in Sources */,
 				15A3D91E1682F7D5002FB0C5 /* b2PolygonAndCircleContact.cpp in Sources */,
 				15A3D91F1682F7D5002FB0C5 /* b2PolygonContact.cpp in Sources */,
+				0F127D8C1D0FA3FF00B6256A /* CCHueFilter.cpp in Sources */,
 				15A3D9201682F7D5002FB0C5 /* b2DistanceJoint.cpp in Sources */,
 				15A3D9211682F7D5002FB0C5 /* b2FrictionJoint.cpp in Sources */,
 				15A3D9221682F7D5002FB0C5 /* b2GearJoint.cpp in Sources */,
@@ -1691,8 +1878,10 @@
 				15A3D9291682F7D5002FB0C5 /* b2WeldJoint.cpp in Sources */,
 				15A3D92A1682F7D5002FB0C5 /* b2WheelJoint.cpp in Sources */,
 				15A3D9391682F7D5002FB0C5 /* b2Rope.cpp in Sources */,
+				0F127D861D0FA3FF00B6256A /* CCDropShadowFilter.cpp in Sources */,
 				15A3D9951682F7F9002FB0C5 /* chipmunk.c in Sources */,
 				15A3D9971682F7F9002FB0C5 /* cpConstraint.c in Sources */,
+				0F127D901D0FA3FF00B6256A /* CCSepiaFilter.cpp in Sources */,
 				15A3D9981682F7F9002FB0C5 /* cpDampedRotarySpring.c in Sources */,
 				15A3D9991682F7F9002FB0C5 /* cpDampedSpring.c in Sources */,
 				15A3D99A1682F7F9002FB0C5 /* cpGearJoint.c in Sources */,
@@ -1704,7 +1893,9 @@
 				15A3D9A01682F7F9002FB0C5 /* cpSimpleMotor.c in Sources */,
 				15A3D9A11682F7F9002FB0C5 /* cpSlideJoint.c in Sources */,
 				15A3D9A21682F7F9002FB0C5 /* cpArbiter.c in Sources */,
+				0F127D931D0FA3FF00B6256A /* CCFilteredSprite.cpp in Sources */,
 				15A3D9A31682F7F9002FB0C5 /* cpArray.c in Sources */,
+				0F127D941D0FA3FF00B6256A /* ccFilterShaders.cpp in Sources */,
 				15A3D9A41682F7F9002FB0C5 /* cpBB.c in Sources */,
 				15A3D9A51682F7F9002FB0C5 /* cpBBTree.c in Sources */,
 				15A3D9A61682F7F9002FB0C5 /* cpBody.c in Sources */,
@@ -1751,13 +1942,16 @@
 				15A3DA4C1682F826002FB0C5 /* CCControlHuePicker.cpp in Sources */,
 				15A3DA4D1682F826002FB0C5 /* CCControlPotentiometer.cpp in Sources */,
 				15A3DA4E1682F826002FB0C5 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
+				0F127D831D0FA3FF00B6256A /* CCBlurFilter.cpp in Sources */,
 				15A3DA4F1682F826002FB0C5 /* CCControlSlider.cpp in Sources */,
 				15A3DA501682F826002FB0C5 /* CCControlStepper.cpp in Sources */,
 				15A3DA511682F826002FB0C5 /* CCControlSwitch.cpp in Sources */,
 				15A3DA521682F826002FB0C5 /* CCControlUtils.cpp in Sources */,
+				0F127D8E1D0FA3FF00B6256A /* CCRGBFilter.cpp in Sources */,
 				15A3DA531682F826002FB0C5 /* CCInvocation.cpp in Sources */,
 				15A3DA541682F826002FB0C5 /* CCScale9Sprite.cpp in Sources */,
 				15A3DA551682F826002FB0C5 /* CCEditBox.cpp in Sources */,
+				0F127D8F1D0FA3FF00B6256A /* CCSaturationFilter.cpp in Sources */,
 				15A3DA571682F826002FB0C5 /* CCEditBoxImplIOS.mm in Sources */,
 				15A3DA591682F826002FB0C5 /* CCScrollView.cpp in Sources */,
 				15A3DA5A1682F826002FB0C5 /* CCSorting.cpp in Sources */,
@@ -1771,6 +1965,7 @@
 				15A3DAED1682F8A6002FB0C5 /* CocosDenshion.m in Sources */,
 				15A3DAEE1682F8A6002FB0C5 /* SimpleAudioEngine.mm in Sources */,
 				15A3DAEF1682F8A6002FB0C5 /* SimpleAudioEngine_objc.m in Sources */,
+				0F127D891D0FA3FF00B6256A /* CCGammaFilter.cpp in Sources */,
 				1A27573F1697CF2B00504026 /* CCEditBoxImplAndroid.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
@@ -1781,12 +1976,15 @@
 				1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */,
 				1A8F3B70175E05DA00049216 /* AnimationStateData.cpp in Sources */,
 				1A8F3B71175E05DA00049216 /* Atlas.cpp in Sources */,
+				0F127D851D0FA3FF00B6256A /* CCContrastFilter.cpp in Sources */,
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,
 				1A8F3B75175E05DA00049216 /* Bone.cpp in Sources */,
 				1A8F3B76175E05DA00049216 /* BoneData.cpp in Sources */,
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,
+				0F127D8D1D0FA3FF00B6256A /* CCMaskFilter.cpp in Sources */,
+				0F127D871D0FA3FF00B6256A /* CCExposureFilter.cpp in Sources */,
 				1A8F3B78175E05DA00049216 /* CCSkeletonAnimation.cpp in Sources */,
 				1A8F3B79175E05DA00049216 /* extension.cpp in Sources */,
 				1A8F3B7A175E05DA00049216 /* Json.cpp in Sources */,
@@ -1798,10 +1996,13 @@
 				1A8F3B80175E05DA00049216 /* Slot.cpp in Sources */,
 				1A8F3B81175E05DA00049216 /* SlotData.cpp in Sources */,
 				1A8F3B82175E05DA00049216 /* spine-cocos2dx.cpp in Sources */,
+				0F127D921D0FA3FF00B6256A /* CCTestFilter.cpp in Sources */,
+				0F127D8B1D0FA3FF00B6256A /* CCHazeFilter.cpp in Sources */,
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,
 				1A9CE8791765A12C000E3062 /* CCArmatureAnimation.cpp in Sources */,
 				1A9CE87A1765A12C000E3062 /* CCProcessBase.cpp in Sources */,
+				0F127D911D0FA3FF00B6256A /* CCSharpenFilter.cpp in Sources */,
 				1A9CE87B1765A12C000E3062 /* CCTween.cpp in Sources */,
 				1A9CE87C1765A12C000E3062 /* CCArmature.cpp in Sources */,
 				1A9CE87D1765A12C000E3062 /* CCBone.cpp in Sources */,
