@@ -46,20 +46,20 @@ bool MainScene::Init()
     
     setTouchEnabled(true);
     
-//    /* Create an autorelease CCNodeLoaderLibrary. */
-//    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-////    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
-//    /* Create an autorelease CCBReader. */
-//    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
-//    /* Read a ccbi file. */
-//    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
-//    m_AnimationManager = ccbReader->getAnimationManager();
-//    m_AnimationManager->runAnimationsForSequenceNamed("default");
-//    m_bMenuShow = true;
-//    ccbReader->release();
-//    if(node != NULL) {
-//        this->addChild(node);
-//    }
+    /* Create an autorelease CCNodeLoaderLibrary. */
+    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+    /* Create an autorelease CCBReader. */
+    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+    /* Read a ccbi file. */
+    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+    m_AnimationManager = ccbReader->getAnimationManager();
+    m_AnimationManager->runAnimationsForSequenceNamed("default");
+    m_bMenuShow = true;
+    ccbReader->release();
+    if(node != NULL) {
+        this->addChild(node);
+    }
     
 //    CCSprite* pSp = CCSprite::create("Icon-144.png");
 //    addChild(pSp,0,100);
@@ -70,7 +70,7 @@ bool MainScene::Init()
     pSpOne->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
     CCGrayFilter* pF = CCGrayFilter::create(ccc4f(0.2, 0.3, 0.5, 0.1));
     pSpOne->setFilter(pF);
-    
+
     CCFilteredSpriteWithMulti* pSpMulti = CCFilteredSpriteWithMulti::create("Icon-144.png");
     addChild(pSpMulti);
     pSpMulti->setPosition(ccp(visibleSize.width/2,visibleSize.height/4));
@@ -123,14 +123,14 @@ void MainScene::onActionMenuClicked(CCObject* pSender)
     {
         m_AnimationManager->runAnimationsForSequenceNamed("menu_action_in");
         m_bMenuShow = false;
-        m_actionBtn->setNormalImage(CCSprite::create("mainUi_btn_gongneng.png"));
+        m_actionBtn->setNormalImage(CCSprite::create("main/mainUiFeeling/mainUi_btn_gongneng.png"));
         
     }
     else
     {
         m_AnimationManager->runAnimationsForSequenceNamed("menu_action_out");
         m_bMenuShow = true;
-        m_actionBtn->setNormalImage(CCSprite::create("mainUi_btn_gongneng_2.png"));
+        m_actionBtn->setNormalImage(CCSprite::create("main/mainUiFeeling/mainUi_btn_gongneng_2.png"));
     }
 }
 

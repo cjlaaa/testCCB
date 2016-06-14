@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F12772E1D0D26BC00B6256A /* main in Resources */ = {isa = PBXBuildFile; fileRef = 0F12772D1D0D26BC00B6256A /* main */; };
-		0F1277311D0D27E500B6256A /* mainUi_btn_gongneng_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */; };
-		0F1277321D0D27E500B6256A /* mainUi_btn_gongneng.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */; };
 		0F12773D1D0D5ED100B6256A /* testCallbacks.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0F12773C1D0D5ED100B6256A /* testCallbacks.ccbi */; };
 		0F127D3A1D0EA93100B6256A /* ShaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D381D0EA93100B6256A /* ShaderUtils.cpp */; };
 		0F127D831D0FA3FF00B6256A /* CCBlurFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D401D0FA3FF00B6256A /* CCBlurFilter.cpp */; };
@@ -272,8 +270,6 @@
 
 /* Begin PBXFileReference section */
 		0F12772D1D0D26BC00B6256A /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; path = main; sourceTree = "<group>"; };
-		0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainUi_btn_gongneng_2.png; path = main/mainUiFeeling/mainUi_btn_gongneng_2.png; sourceTree = "<group>"; };
-		0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainUi_btn_gongneng.png; path = main/mainUiFeeling/mainUi_btn_gongneng.png; sourceTree = "<group>"; };
 		0F12773C1D0D5ED100B6256A /* testCallbacks.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = testCallbacks.ccbi; sourceTree = "<group>"; };
 		0F127D381D0EA93100B6256A /* ShaderUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderUtils.cpp; path = ../Classes/ShaderUtils.cpp; sourceTree = "<group>"; };
 		0F127D391D0EA93100B6256A /* ShaderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderUtils.h; path = ../Classes/ShaderUtils.h; sourceTree = "<group>"; };
@@ -1693,8 +1689,6 @@
 			isa = PBXGroup;
 			children = (
 				0F12773C1D0D5ED100B6256A /* testCallbacks.ccbi */,
-				0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */,
-				0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */,
 				0F12772D1D0D26BC00B6256A /* main */,
 				0F9FDB241D0AA77800FE0996 /* ccbResources */,
 				0F9FDB251D0AA77800FE0996 /* fileLookup.plist */,
@@ -1790,8 +1784,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F1277311D0D27E500B6256A /* mainUi_btn_gongneng_2.png in Resources */,
-				0F1277321D0D27E500B6256A /* mainUi_btn_gongneng.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				0F9FDB381D0AA77800FE0996 /* resources-iphone in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
