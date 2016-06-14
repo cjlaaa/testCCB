@@ -1,3 +1,5 @@
+NDK_ROOT=/Users/cjlaaa/Documents/Android/android-ndk-r8e
+
 APPNAME="testCCB"
 
 # options
