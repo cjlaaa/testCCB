@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "ShaderUtils.h"
 
 CCScene* MainScene::createMainScene()
 {
@@ -44,35 +45,48 @@ bool MainScene::Init()
     
     setTouchEnabled(true);
     
-    /* Create an autorelease CCNodeLoaderLibrary. */
-    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
-    /* Create an autorelease CCBReader. */
-    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
-    /* Read a ccbi file. */
-    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
-    m_AnimationManager = ccbReader->getAnimationManager();
-    m_AnimationManager->runAnimationsForSequenceNamed("default");
-    m_bMenuShow = true;
-    ccbReader->release();
-    if(node != NULL) {
-        this->addChild(node);
-    }
+//    /* Create an autorelease CCNodeLoaderLibrary. */
+//    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+////    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+//    /* Create an autorelease CCBReader. */
+//    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+//    /* Read a ccbi file. */
+//    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+//    m_AnimationManager = ccbReader->getAnimationManager();
+//    m_AnimationManager->runAnimationsForSequenceNamed("default");
+//    m_bMenuShow = true;
+//    ccbReader->release();
+//    if(node != NULL) {
+//        this->addChild(node);
+//    }
     
-    //test setBlendFunc
     CCSprite* pSp = CCSprite::create("Icon-144.png");
-    addChild(pSp);
+    addChild(pSp,0,100);
     pSp->setPosition(ccp(visibleSize.width/2,visibleSize.height/3));
-    ccBlendFunc cbl = { GL_SRC_ALPHA , GL_ONE };
-    pSp->setBlendFunc(cbl);
     
+//    //test setBlendFunc
+//    ccBlendFunc cbl = { GL_SRC_ALPHA , GL_ONE };
 //    CCRotateBy * ccRotateBy = CCRotateBy::create(20.0f, 360);
 //    CCRepeatForever * ccRepeatForever = CCRepeatForever::create(ccRotateBy);
 //    this->mBurstSprite->runAction(ccRepeatForever);
+//    pSp->setBlendFunc(cbl);
+    
+    //test Shader Utils
+//    ShaderUtils::alphaMask(pSp, "Icon-114.png");
+    ShaderUtils::colorHSL(pSp, 120, 60);
     
     m_count = 0;
     
     return true;
+}
+
+void MainScene::draw()
+{
+    CCLayer::draw();
+    
+//    CCSprite* pSp = dynamic_cast<CCSprite*>(getChildByTag(100));
+//    ShaderUtils::colorHSL(pSp, 0, 0);
+//    CCLog("xxx");
 }
 
 void MainScene::CCBPlayCallback()

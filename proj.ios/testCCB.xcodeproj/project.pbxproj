@@ -11,6 +11,7 @@
 		0F1277311D0D27E500B6256A /* mainUi_btn_gongneng_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */; };
 		0F1277321D0D27E500B6256A /* mainUi_btn_gongneng.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */; };
 		0F12773D1D0D5ED100B6256A /* testCallbacks.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0F12773C1D0D5ED100B6256A /* testCallbacks.ccbi */; };
+		0F127D3A1D0EA93100B6256A /* ShaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F127D381D0EA93100B6256A /* ShaderUtils.cpp */; };
 		0F9FDB2F1D0AA77800FE0996 /* ccbResources in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB241D0AA77800FE0996 /* ccbResources */; };
 		0F9FDB301D0AA77800FE0996 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB251D0AA77800FE0996 /* fileLookup.plist */; };
 		0F9FDB311D0AA77800FE0996 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F9FDB261D0AA77800FE0996 /* fonts */; };
@@ -256,6 +257,8 @@
 		0F12772F1D0D27E500B6256A /* mainUi_btn_gongneng_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainUi_btn_gongneng_2.png; path = main/mainUiFeeling/mainUi_btn_gongneng_2.png; sourceTree = "<group>"; };
 		0F1277301D0D27E500B6256A /* mainUi_btn_gongneng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainUi_btn_gongneng.png; path = main/mainUiFeeling/mainUi_btn_gongneng.png; sourceTree = "<group>"; };
 		0F12773C1D0D5ED100B6256A /* testCallbacks.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = testCallbacks.ccbi; sourceTree = "<group>"; };
+		0F127D381D0EA93100B6256A /* ShaderUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderUtils.cpp; path = ../Classes/ShaderUtils.cpp; sourceTree = "<group>"; };
+		0F127D391D0EA93100B6256A /* ShaderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderUtils.h; path = ../Classes/ShaderUtils.h; sourceTree = "<group>"; };
 		0F9FDB241D0AA77800FE0996 /* ccbResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccbResources; sourceTree = "<group>"; };
 		0F9FDB251D0AA77800FE0996 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fileLookup.plist; sourceTree = "<group>"; };
 		0F9FDB261D0AA77800FE0996 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
@@ -1203,6 +1206,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0F127D381D0EA93100B6256A /* ShaderUtils.cpp */,
+				0F127D391D0EA93100B6256A /* ShaderUtils.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -1737,6 +1742,7 @@
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
+				0F127D3A1D0EA93100B6256A /* ShaderUtils.cpp in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
 				15A3DA491682F826002FB0C5 /* CCControl.cpp in Sources */,

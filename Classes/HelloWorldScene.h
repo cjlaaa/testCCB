@@ -36,6 +36,7 @@ public:
     CCBAnimationManager* m_AnimationManager;
     bool m_bMenuShow;
     int m_count;
+    void draw();
 };
 
 /* Forward declaration. */
