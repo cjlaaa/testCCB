@@ -46,42 +46,38 @@ bool MainScene::Init()
     
     setTouchEnabled(true);
     
-    /* Create an autorelease CCNodeLoaderLibrary. */
-    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-//    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
-    /* Create an autorelease CCBReader. */
-    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
-    /* Read a ccbi file. */
-    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
-    m_AnimationManager = ccbReader->getAnimationManager();
-    m_AnimationManager->runAnimationsForSequenceNamed("default");
-    m_bMenuShow = true;
-    ccbReader->release();
-    if(node != NULL) {
-        this->addChild(node);
-    }
+//    /* Create an autorelease CCNodeLoaderLibrary. */
+//    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+////    ccNodeLoaderLibrary->registerCCNodeLoader("MainScene", MainSceneLayerLoader::loader());
+//    /* Create an autorelease CCBReader. */
+//    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+//    /* Read a ccbi file. */
+//    CCNode * node = ccbReader->readNodeGraphFromFile("MainScene.ccbi", this);
+//    m_AnimationManager = ccbReader->getAnimationManager();
+//    m_AnimationManager->runAnimationsForSequenceNamed("default");
+//    m_bMenuShow = true;
+//    ccbReader->release();
+//    if(node != NULL) {
+//        this->addChild(node);
+//    }
     
-//    CCSprite* pSp = CCSprite::create("Icon-144.png");
-//    addChild(pSp,0,100);
-//    pSp->setPosition(ccp(visibleSize.width/2,visibleSize.height/3));
-    
-    CCFilteredSpriteWithOne* pSpOne = CCFilteredSpriteWithOne::create("Icon-144.png");
-    addChild(pSpOne);
-    pSpOne->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
-    CCGrayFilter* pF = CCGrayFilter::create(ccc4f(0.2, 0.3, 0.5, 0.1));
-    pSpOne->setFilter(pF);
-
-    CCFilteredSpriteWithMulti* pSpMulti = CCFilteredSpriteWithMulti::create("Icon-144.png");
-    addChild(pSpMulti);
-    pSpMulti->setPosition(ccp(visibleSize.width/2,visibleSize.height/4));
-    CCHueFilter* pF1 = CCHueFilter::create(240);
-    CCSaturationFilter* pF2 = CCSaturationFilter::create(1.5);
-    CCBrightnessFilter* pF3 = CCBrightnessFilter::create(-0.4);
-    CCArray* pArray = CCArray::create();
-    pArray->addObject(pF1);
-    pArray->addObject(pF2);
-    pArray->addObject(pF3);
-    pSpMulti->setFilters(pArray);
+//    CCFilteredSpriteWithOne* pSpOne = CCFilteredSpriteWithOne::create("Icon-144.png");
+//    addChild(pSpOne);
+//    pSpOne->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
+//    CCGrayFilter* pF = CCGrayFilter::create(ccc4f(0.2, 0.3, 0.5, 0.1));
+//    pSpOne->setFilter(pF);
+//
+//    CCFilteredSpriteWithMulti* pSpMulti = CCFilteredSpriteWithMulti::create("Icon-144.png");
+//    addChild(pSpMulti);
+//    pSpMulti->setPosition(ccp(visibleSize.width/2,visibleSize.height/4));
+//    CCHueFilter* pF1 = CCHueFilter::create(240);
+//    CCSaturationFilter* pF2 = CCSaturationFilter::create(1.5);
+//    CCBrightnessFilter* pF3 = CCBrightnessFilter::create(-0.4);
+//    CCArray* pArray = CCArray::create();
+//    pArray->addObject(pF1);
+//    pArray->addObject(pF2);
+//    pArray->addObject(pF3);
+//    pSpMulti->setFilters(pArray);
     
 //    //test setBlendFunc
 //    ccBlendFunc cbl = { GL_SRC_ALPHA , GL_ONE };
@@ -96,7 +92,96 @@ bool MainScene::Init()
     
     m_count = 0;
     
+    CCSprite *sprite = CCSprite::create("Icon-144.png");
+    
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    CCTableView* tableView = CCTableView::create(this,ccp(sprite->getContentSize().width*2,sprite->getContentSize().height*4));
+    tableView->setDirection(kCCScrollViewDirectionVertical);
+    tableView->setPosition(ccp(winSize.width/2,winSize.height/2));
+    tableView->setDelegate(this);
+    tableView->setVerticalFillOrder(kCCTableViewFillTopDown);
+    this->addChild(tableView,0,111);
+    tableView->reloadData();
+    
+    sprite->release();
+    
     return true;
+}
+
+void MainScene::scrollViewDidScroll(CCScrollView* view)
+{
+//    CCLog("scrollViewDidScroll");
+};
+
+void MainScene::scrollViewDidZoom(CCScrollView* view)
+{
+//    CCLog("scrollViewDidZoom");
+}
+
+void MainScene::tableCellTouched(CCTableView* table, CCTableViewCell* cell)
+{
+    CCLog("tableCellTouched,%d",cell->getIdx());
+}
+
+CCSize MainScene::tableCellSizeForIndex(CCTableView *table, unsigned int idx)
+{
+    CCSprite *sprite = CCSprite::create("Icon-144.png");
+    CCSize size = sprite->getContentSize();
+    sprite->release();
+    return size;
+}
+
+void MainScene::tableViewSubBtnCallback(CCObject* pSender)
+{
+    CCTableViewCell *cell = (CCTableViewCell*)(((CCMenuItemImage*)pSender)->getParent()->getParent());
+    CCLog("tableViewSubBtnCallback,%d",cell->getIdx());
+//    ((CCMenuItemImage*)pSender)->setScaleX(2);
+}
+
+
+CCTableViewCell* MainScene::tableCellAtIndex(CCTableView *table, unsigned int idx)
+{
+    CCString *string = CCString::createWithFormat("%d", idx);
+    CCTableViewCell *cell = table->dequeueCell();
+    if (!cell) {
+        cell = new CCTableViewCell();
+        cell->autorelease();
+        CCSprite *sprite = CCSprite::create("Icon-144.png");
+        sprite->setAnchorPoint(CCPointZero);
+        sprite->setPosition(ccp(0, 0));
+        sprite->setScaleX(2);
+        cell->addChild(sprite);
+        
+        CCLabelTTF *label = CCLabelTTF::create(string->getCString(), "Helvetica", 20.0);
+        label->setPosition(CCPointZero);
+        label->setAnchorPoint(CCPointZero);
+        label->setTag(123);
+        cell->addChild(label);
+        
+        CCMenuItemImage *pBtn = CCMenuItemImage::create(
+                                                        "CloseNormal.png",
+                                                        "CloseSelected.png",
+                                                        this,
+                                                        menu_selector(MainScene::tableViewSubBtnCallback));
+        CCMenu* pMenu = CCMenu::create(pBtn, NULL);
+        pBtn->setPosition(ccp(pBtn->getContentSize().width/2,pBtn->getContentSize().height/2));
+        pMenu->setPosition(CCPointZero);
+        cell->addChild(pMenu, 1);
+        cell->setTag(idx);
+    }
+    else
+    {
+        CCLabelTTF *label = (CCLabelTTF*)cell->getChildByTag(123);
+        label->setString(string->getCString());
+    }
+
+    
+    return cell;
+}
+
+unsigned int MainScene::numberOfCellsInTableView(CCTableView *table)
+{
+    return 10;
 }
 
 void MainScene::draw()
