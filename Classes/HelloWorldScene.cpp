@@ -92,18 +92,44 @@ bool MainScene::Init()
     
     m_count = 0;
     
-    CCSprite *sprite = CCSprite::create("Icon-144.png");
+//    CCSprite *sprite = CCSprite::create("Icon-144.png");
+//    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+//    CCTableView* tableView = CCTableView::create(this,ccp(sprite->getContentSize().width*4,sprite->getContentSize().height*4));
+//    tableView->setDirection(kCCScrollViewDirectionVertical);
+//    tableView->setPosition(ccp(winSize.width/3,winSize.height/3));
+//    tableView->setDelegate(this);
+//    tableView->setVerticalFillOrder(kCCTableViewFillTopDown);
+//    this->addChild(tableView,0,111);
+//    tableView->reloadData();
+//    sprite->release();
     
-    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    CCTableView* tableView = CCTableView::create(this,ccp(sprite->getContentSize().width*2,sprite->getContentSize().height*4));
-    tableView->setDirection(kCCScrollViewDirectionVertical);
-    tableView->setPosition(ccp(winSize.width/2,winSize.height/2));
-    tableView->setDelegate(this);
-    tableView->setVerticalFillOrder(kCCTableViewFillTopDown);
-    this->addChild(tableView,0,111);
-    tableView->reloadData();
-    
-    sprite->release();
+    //背景图片
+    CCSprite * background = CCSprite::create("HelloWorld.png");
+    background->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
+    this->addChild(background,0);
+    //创建一个裁剪节点用来实现遮罩的效果
+    CCClippingNode * clippingNode = CCClippingNode::create();
+    this->addChild(clippingNode,1);
+    //向裁剪节点中加入内容，这里加入的是一个透明的层
+    CCLayerColor * layer = CCLayerColor::create(ccc4(0,0,0,200));
+    clippingNode->addChild(layer);
+    //继续向裁剪节点中加入内容，这里加入的是一个精灵
+    CCSprite * sprite = CCSprite::create("Icon-144.png");
+    sprite->setPosition(ccp(visibleSize.width/4,visibleSize.height/2));
+    clippingNode->addChild(sprite);
+    //创建模板，裁剪节点将按照这个模板来裁剪区域
+    CCSprite * stencil = CCSprite::create("Icon-114.png");
+    stencil->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
+    clippingNode->setStencil(stencil);
+    //向裁剪节点中加入精灵，精灵的位置和裁剪的位置相同，所以最后让裁剪掉了
+    CCSprite * sprite2 = CCSprite::create("Icon-144.png");
+    sprite2->setPosition(ccp(visibleSize.width/2,visibleSize.height/2));
+    clippingNode->addChild(sprite2);
+    //这个是用来设置显示裁剪区域还是非裁剪区域的
+    clippingNode->setInverted(true);
+    //我们之前放了一张裁剪的模板，按照这个模板裁剪的时候同时按照这个alpha的值裁剪，这个值的范围是0-1
+    //设为0就把透明的区域裁剪掉了
+//    clippingNode->setAlphaThreshold(0);
     
     return true;
 }
@@ -181,7 +207,7 @@ CCTableViewCell* MainScene::tableCellAtIndex(CCTableView *table, unsigned int id
 
 unsigned int MainScene::numberOfCellsInTableView(CCTableView *table)
 {
-    return 10;
+    return 100;
 }
 
 void MainScene::draw()
